@@ -9,6 +9,7 @@ use Javaabu\Jaravel\Foundation\Application;
 use Mockery as m;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Throwable;
 
 class FoundationApplicationBuilderTest extends TestCase
 {
@@ -42,6 +43,7 @@ class FoundationApplicationBuilderTest extends TestCase
                 apiPrefix: 'api/v1',
             )
             ->create();
+
         $this->assertInstanceOf(Application::class, $app);
     }
 
