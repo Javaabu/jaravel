@@ -3,7 +3,7 @@ title: Introduction
 sidebar_position: 1.0
 ---
 
-# {Your Package}
+# Jaravel
 
 :::danger
 
@@ -11,4 +11,4 @@ This package is currently under development. If anything works, that's a surpris
 
 :::
 
-[{Your Package}](https://github.com/Javaabu/{your-package}) {package description}.
+[Jaravel](https://github.com/Javaabu/jaravel) Customized version of Laravel for Javaabu.

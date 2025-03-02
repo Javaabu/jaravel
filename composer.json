@@ -1,47 +1,42 @@
 {
-    "name": "javaabu/{your-package}",
-    "description": "{package description}",
-    "homepage": "https://github.com/Javaabu/{your-package}",
+    "name": "javaabu/jaravel",
+    "description": "Customized version of Laravel for Javaabu",
+    "homepage": "https://github.com/Javaabu/jaravel",
     "license": "MIT",
     "keywords": [
         "javaabu",
         "laravel",
-        "{your_package}"
+        "jaravel"
     ],
     "authors": [
         {
-            "name": "{author_name}",
-            "email": "{author_email}",
+            "name": "Arushad Ahmed",
+            "email": "arushad@javaabu.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "illuminate/support": "^9.0 || ^10.0 || ^11.0 || ^12.0"
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "javaabu/helpers": "^1.60"
     },
     "require-dev": {
-        "laravel/pint": "^1.14",
-        "orchestra/testbench": "^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "phpunit/phpunit": "^9.5 || ^10.5 || ^11.5.3"
+        "mockery/mockery": "^1.6.10",
+        "phpunit/phpunit": "^11.5.3"
     },
     "autoload": {
         "psr-4": {
-            "Javaabu\\{YourPackage}\\": "src/"
+            "Javaabu\\Jaravel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Javaabu\\{YourPackage}\\Tests\\": "tests/"
+            "Javaabu\\Jaravel\\Tests\\": "tests/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "1.0-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Javaabu\\{YourPackage}\\{YourPackage}ServiceProvider"
-            ]
+            "dev-main": "12.0-dev"
         }
     },
     "minimum-stability": "dev",
