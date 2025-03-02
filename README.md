@@ -6,7 +6,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/javaabu/jaravel.svg?style=flat-square)](https://packagist.org/packages/javaabu/jaravel)
 
 
-
 ## Introduction
 
 Customized version of Laravel for Javaabu
