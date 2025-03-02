@@ -5,6 +5,7 @@ namespace Javaabu\Jaravel\Foundation\Exceptions;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Illuminate\Support\Facades\Request;
 
 class Handler extends ExceptionHandler
 {
@@ -31,7 +32,7 @@ class Handler extends ExceptionHandler
 
     protected function getHttpExceptionView(HttpExceptionInterface $e)
     {
-        if (current_portal() == 'admin') {
+        if ($this->isAdminPortal()) {
             return parent::getHttpExceptionView($e);
         }
 
@@ -48,5 +49,41 @@ class Handler extends ExceptionHandler
         }
 
         return parent::getHttpExceptionView($e);
+    }
+
+    protected function isAdminPortal(): bool
+    {
+        $host = Request::getHost();
+
+        // get the main url
+        $parse = parse_url(config('app.url'));
+        $primary_domain = str_ireplace('www.', '', $parse['host']);
+
+        // get the admin domain
+        $admin_domain = config('app.admin_domain');
+
+        if ($primary_domain != $admin_domain) {
+            if ($host == $admin_domain) {
+                return true;
+            }
+        } elseif ($admin_prefix = config('app.admin_prefix')) {
+            // Get the current URL
+            $url = Request::url();
+
+            // Parse the URL
+            $parsed_url = parse_url($url);
+
+            // Get the path from the parsed URL
+            $path = $parsed_url['path'] ?? '';
+
+            // Get the first part of the path
+            $first_part = trim(explode('/', $path)[1] ?? '', '/');
+
+            if ($first_part == $admin_prefix) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
