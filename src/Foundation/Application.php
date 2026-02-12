@@ -9,7 +9,7 @@ use Throwable;
 
 class Application extends BaseApplication
 {
-    public static function configure(string $basePath = null)
+    public static function configure(?string $basePath = null)
     {
         $basePath = match (true) {
             is_string($basePath) => $basePath,
