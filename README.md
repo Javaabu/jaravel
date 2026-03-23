@@ -1,7 +1,7 @@
 # Jaravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/javaabu/jaravel.svg?style=flat-square)](https://packagist.org/packages/javaabu/jaravel)
-[![Test Status](../../actions/workflows/run-tests.yml/badge.svg)](../../actions/workflows/run-tests.yml)
+[![Test Status](../../actions/workflows/run-tests.yml/badge.svg?branch=12.x)](../../actions/workflows/run-tests.yml)
 ![Code Coverage Badge](./.github/coverage.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/javaabu/jaravel.svg?style=flat-square)](https://packagist.org/packages/javaabu/jaravel)
 
