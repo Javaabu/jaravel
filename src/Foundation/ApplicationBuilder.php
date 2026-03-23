@@ -3,6 +3,7 @@
 namespace Javaabu\Jaravel\Foundation;
 
 use Closure;
+use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Configuration\ApplicationBuilder as BaseApplicationBuilder;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -123,6 +124,12 @@ class ApplicationBuilder extends BaseApplicationBuilder
                 foreach ($priorityPrepends as $newMiddleware => $before) {
                     $kernel->addToMiddlewarePriorityBefore($before, $newMiddleware);
                 }
+            }
+        });
+
+        $this->app->afterResolving(ConsoleKernel::class, function () use ($callback) {
+            if (! is_null($callback)) {
+                $callback(new Middleware);
             }
         });
 
